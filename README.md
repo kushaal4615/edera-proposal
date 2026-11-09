@@ -8,7 +8,7 @@ The page is the **Order of Programme**: the printed programme booklet handed to 
 Palette: card cream ground, Edera's evergreen ink (the brand at useedera.com), evergreen for rules and active states, brass foil for the one action and every amount, ruby for the seal only. Type: Bodoni Moda / Instrument Sans / Azeret Mono.
 
 ## Commercials
-`src/data/proposal.ts` → `COMMERCIALS`. `totalCost` 7000, `timelineMonths` 3, eight milestones at 10/10/15/15/15/15/10/10 percent; every amount on the page derives from these. Support terms follow the house rule: twelve months of free bug fixes, then completely optional ($500 a month for up to 15 hours, $30 an hour beyond, opt-in).
+`src/data/proposal.ts` → `COMMERCIALS`. `totalCost` 7000, `timelineMonths` 3, eight milestones at 10/10/15/15/15/15/10/10 percent; every amount on the page derives from these. Support terms: ninety days of free bug fixes, then completely optional ($500 a month for up to 15 hours, $30 an hour beyond, opt-in).
 
 ## Run
 ```

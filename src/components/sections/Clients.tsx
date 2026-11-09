@@ -83,7 +83,7 @@ function MarkLink({ c, copy }: { c: ClientMark; copy?: boolean }) {
   )
 }
 
-/** Why-us lines pulled into the margin on lg: the team, the architecture, the year of fixes. */
+/** Why-us lines pulled into the margin on lg: the team, the architecture, the ninety days of fixes. */
 const PULLED = new Set([1, 5, 6])
 
 export function Clients() {

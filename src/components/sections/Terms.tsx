@@ -62,14 +62,14 @@ export function Terms() {
         #terms .ledger-row [role="img"] > span.struck { font-size: 6.5px !important; }
       `}</style>
       <div className="shell">
-        <Item no="11" time="22:00" name="The small print" id="terms-h" seal="Included" lines={['A fixed price.', 'A year of fixes.', 'Then your call.']} />
+        <Item no="11" time="22:00" name="The small print" id="terms-h" seal="Included" lines={['A fixed price.', 'Ninety days of fixes.', 'Then your call.']} />
 
         <div className="mt-12 grid gap-14 xl:mt-16 xl:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] xl:gap-16">
           {/* the ledger */}
           <div className="min-w-0">
             <Reveal>
               <p className="measure text-[var(--ink-2)]">
-                The investment is fixed at <span className="struck font-bold text-[var(--money)]">{formatMoney(TOTAL_COST)}</span>, paid in {MILESTONES.length} milestones over {timelineLabel}, with nothing due between items. Twelve months of bug fixes are included from the day the source code is handed over. After that, support is completely optional: no lock-in, no auto-renew, and nothing happens unless you ask for it.
+                The investment is fixed at <span className="struck font-bold text-[var(--money)]">{formatMoney(TOTAL_COST)}</span>, paid in {MILESTONES.length} milestones over {timelineLabel}, with nothing due between items. Ninety days of support and maintenance for bug fixes are included from the day the source code is handed over. After that, support is completely optional: no lock-in, no auto-renew, and nothing happens unless you ask for it.
               </p>
             </Reveal>
 
