@@ -1,0 +1,219 @@
+/* VARIABLES ONLY. primitive → semantic → component. Resets live in index.css @layer base.
+   World: the Order of Programme. The printed programme booklet handed to every guest at a
+   celebration: cream card stock, a double brass rule framing each page, items numbered down the
+   left with the time they happen, foil-stamped numerals, and a ruby wax seal on the reply card.
+   The palette is Edera's own evergreen (useedera.com) with brass foil and card cream. */
+
+:root {
+  /* ---------- primitives ---------- */
+  --card-0: #fffdf8;
+  --card-50: #f6f0e4;
+  --card-100: #efe6d4;
+  --card-200: #e3d7bf;
+  --card-300: #d1c2a3;
+  --card-400: #b3a07c;
+  --card-500: #8a7858;
+  --ever-950: #081d1a;
+  --ever-900: #0d2521;
+  --ever-850: #10332d;
+  --ever-800: #123c35;
+  --ever-700: #1c6b5a;
+  --ever-600: #23836f;
+  --ever-500: #2e9c85;
+  --ever-300: #7cc2ad;
+  --ever-100: #d9ede6;
+  --brass-100: #f3e6c9;
+  --brass-300: #e6c27c;
+  --brass-500: #c9973f;
+  --brass-600: #b8893a;
+  --brass-700: #8a5e14;
+  --brass-800: #5e3f0a;
+  --ruby-300: #e08a95;
+  --ruby-500: #a5303e;
+  --ruby-600: #8c2634;
+  --ruby-800: #5a1620;
+
+  /* the product's own palette (the clickable prototype's Evergreen & Brass look); never theme-inverted */
+  --scr-bg: #f7f2e8;
+  --scr-surface: #fffdf9;
+  --scr-raised: #fbf7ef;
+  --scr-high: #efe7d8;
+  --scr-rule: rgb(18 60 53 / 0.12);
+  --scr-ink: #123c35;
+  --scr-ink-2: #4f655f;
+  --scr-ink-3: #5f736d;
+  --scr-night: #0b2622;
+  --scr-night-2: #123c35;
+  --scr-on-night: #f7f2e8;
+  --scr-on-night-2: #b9cbc4;
+  --scr-accent: #1c6b5a;
+  --scr-on-accent: #ffffff;
+  --scr-accent-text: #175449;
+  --scr-accent-soft: #d9ede6;
+  --scr-brass: #c9973f;
+  --scr-on-brass: #0b2622;
+  --scr-brass-text: #8a5e14;
+  --scr-brass-soft: #f3e6c9;
+  --scr-free: #2e9c85;
+  --scr-held: #c9973f;
+  --scr-booked: #123c35;
+  --scr-blocked: #e1d6c2;
+  --scr-danger: #b2384a;
+  --scr-danger-soft: #f6dadf;
+
+  /* ---------- type ---------- */
+  --font-display: 'Bodoni Moda Variable', 'Bodoni Moda', 'Didot', 'Georgia', serif;
+  --font-body: 'Instrument Sans Variable', 'Instrument Sans', system-ui, sans-serif;
+  --font-mono: 'Azeret Mono Variable', 'Azeret Mono', ui-monospace, monospace;
+  /* 320 → 42px (13vw) · 768 → 80px · 1440 → 128px (8.9vw) */
+  --fs-hero: clamp(2.625rem, 0.6rem + 9vw, 8rem);
+  --fs-h2: clamp(2.5rem, 1.4rem + 3.5vw, 5rem);
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.5vw, 1.6rem);
+  --fs-numeral: clamp(7rem, 2rem + 24vw, 26rem);
+  --fs-fact: clamp(2.8rem, 1.6rem + 3.4vw, 5rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+  --fs-micro: 0.75rem;
+  --wt-display: 500;
+
+  /* ---------- space ---------- */
+  --gutter: clamp(1rem, 0.4rem + 2.6vw, 3rem);
+  --shell-max: 88rem;
+  --section-y: clamp(6rem, 3rem + 8vw, 13rem);
+  /* the programme's double rule sits this far in from the card's edge */
+  --frame-inset: 0.5rem;
+
+  /* ---------- radius: a printed card has square corners; the devices and pills do not ---------- */
+  --r-card: 2px;
+  --r-plate: 2px;
+  --r-seal: 999px;
+  --r-device: 46px;
+  --r-pill: 999px;
+
+  /* ---------- motion: card stock turning, foil catching the light, a seal pressed ---------- */
+  --ease-turn: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-seal: cubic-bezier(0.7, 0, 0.2, 1);
+  --dur-reveal: 0.7s;
+  --dur-fast: 0.14s;
+
+  /* ---------- permanent surfaces (never theme-inverted) ---------- */
+  /* the closing band: the evening programme under candlelight, night evergreen */
+  --close-bg: var(--ever-950);
+  --close-ink: #f6f0e4;
+  --close-ink-2: #b9cbc4;
+  --close-card: var(--card-50);
+  --close-card-ink: var(--ever-850);
+  --close-rule: rgb(16 51 45 / 0.16);
+  --close-primary: var(--ever-500);
+  --close-cta: var(--brass-500);
+  --close-on-cta: var(--ever-950);
+  --close-verified: var(--ruby-300);
+  --close-card-verified: var(--ruby-500);
+  --close-glow: rgb(201 151 63 / 0.16);
+
+  /* the device mocks */
+  --device-body: #1a1c25;
+  --device-edge: #3c3f4b;
+  --device-base: #cfc6b2;
+  --device-base-2: #b3a890;
+
+  /* ---------- semantic: light (default) ---------- */
+  --ground: var(--card-50);
+  --ground-2: var(--card-100);
+  --card: var(--card-0);
+  --card-hi: #ffffff;
+  --ink: var(--ever-850);
+  --ink-2: #3f554f;
+  --ink-3: #4f635d;
+  --rule: rgb(16 51 45 / 0.12);
+  --rule-strong: rgb(16 51 45 / 0.3);
+  --rule-row: rgb(16 51 45 / 0.2);
+  --hairline-bg: var(--ever-850);
+  --frame: var(--brass-500);
+  --primary: var(--ever-700);
+  --primary-ink: var(--ever-800);
+  --on-primary: #ffffff;
+  --primary-soft: rgb(28 107 90 / 0.12);
+  --money: var(--brass-700);
+  --money-soft: rgb(201 151 63 / 0.14);
+  --foil-a: #e6c27c;
+  --foil-b: #b8893a;
+  --foil-c: #8a5e14;
+  --cta: var(--brass-500);
+  --cta-hover: var(--brass-600);
+  --on-cta: var(--ever-950);
+  --verified: var(--ruby-500);
+  --verified-soft: rgb(165 48 62 / 0.1);
+  --seal: var(--ruby-500);
+  --on-seal: var(--card-50);
+  --danger: var(--ruby-500);
+  --focus: var(--ever-700);
+  --selection: rgb(201 151 63 / 0.3);
+  --duo-dark: var(--ever-850);
+  --duo-light: var(--card-100);
+  --ink-band: var(--ever-850);
+  --on-band: #f6f0e4;
+  --on-band-2: #b9cbc4;
+  --band-rule: rgb(246 240 228 / 0.16);
+
+  /* ---------- component ---------- */
+  /* the one card family: a page of the programme. Card stock, a double brass rule inset from the edge, a soft evergreen-tinted shadow. */
+  --card-border: inset 0 0 0 1px var(--rule-strong);
+  --card-shadow: 0 10px 24px -14px rgb(16 51 45 / 0.35), 0 1px 0 rgb(16 51 45 / 0.08);
+  --card-shadow-lift: 0 22px 40px -18px rgb(16 51 45 / 0.45), 0 2px 0 rgb(16 51 45 / 0.08);
+  --toast-bg: var(--ever-850);
+  --toast-ink: var(--card-50);
+  --avail-free: var(--ever-500);
+  --avail-held: var(--brass-500);
+  --avail-booked: var(--ever-850);
+  --avail-off: rgb(16 51 45 / 0.14);
+}
+
+:root[data-theme='dark'] {
+  /* the programme read by candlelight: night evergreen ground, cream ink, the foil brighter */
+  --ground: var(--ever-950);
+  --ground-2: var(--ever-900);
+  --card: var(--ever-900);
+  --card-hi: #113029;
+  --ink: var(--card-50);
+  --ink-2: #d8d0bd;
+  --ink-3: #b2c3bc;
+  --rule: rgb(246 240 228 / 0.14);
+  --rule-strong: rgb(246 240 228 / 0.32);
+  --rule-row: rgb(246 240 228 / 0.2);
+  --hairline-bg: rgb(246 240 228 / 0.22);
+  --frame: var(--brass-500);
+  --primary: var(--ever-500);
+  --primary-ink: var(--ever-300);
+  --on-primary: var(--ever-950);
+  --primary-soft: rgb(46 156 133 / 0.16);
+  --money: var(--brass-300);
+  --money-soft: rgb(230 194 124 / 0.14);
+  --foil-a: #f3e6c9;
+  --foil-b: #e6c27c;
+  --foil-c: #c9973f;
+  --cta: var(--brass-500);
+  --cta-hover: var(--brass-300);
+  --on-cta: var(--ever-950);
+  --verified: var(--ruby-300);
+  --verified-soft: rgb(224 138 149 / 0.14);
+  --seal: var(--ruby-500);
+  --on-seal: var(--card-50);
+  --danger: var(--ruby-300);
+  --focus: var(--brass-300);
+  --selection: rgb(201 151 63 / 0.32);
+  --duo-dark: var(--ever-950);
+  --duo-light: var(--ever-300);
+  --ink-band: var(--ever-900);
+  --on-band: #f6f0e4;
+  --on-band-2: #b9cbc4;
+  --band-rule: rgb(246 240 228 / 0.16);
+  --card-shadow: 0 10px 24px -14px rgb(0 0 0 / 0.7), 0 1px 0 rgb(0 0 0 / 0.3);
+  --card-shadow-lift: 0 22px 40px -18px rgb(0 0 0 / 0.8), 0 2px 0 rgb(0 0 0 / 0.3);
+  --toast-bg: var(--card-50);
+  --toast-ink: var(--ever-900);
+  --avail-free: var(--ever-500);
+  --avail-held: var(--brass-500);
+  --avail-booked: var(--card-50);
+  --avail-off: rgb(246 240 228 / 0.16);
+}
